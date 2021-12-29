@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as baseActions from 'redux/modules/base';
+// import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
+// import * as baseActions from '../redux/modules/base';
 
 const CreatePost = () => {
     return (
@@ -11,11 +11,12 @@ const CreatePost = () => {
     );
 };
 
-export default connect(
-    (state) => ({
+export default CreatePost;
+// export default connect(
+//     (state) => ({
         
-    }),
-    (dispatch) => ({
-        BaseActions: bindActionCreators(baseActions, dispatch) 
-    })
-  ) (CreatePost);
+//     }),
+//     (dispatch) => ({
+//         BaseActions: bindActionCreators(baseActions, dispatch) 
+//     })
+//   ) (CreatePost);

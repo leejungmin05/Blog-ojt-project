@@ -1,13 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
-import Root from './Root';
-import configureStore from './redux/configureStore';
+// import Root from "./Root";
 
-const store = configureStore();
+import configureStore from "./redux/configureStore";
+import { BrowserRouter } from "react-router-dom";
+import App from './App';
+
+// const store = configureStore();
 
 ReactDOM.render(
-  <Root store={store} />,
+  // <Root store={store} />,
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>,
   document.getElementById("root")
 );
 

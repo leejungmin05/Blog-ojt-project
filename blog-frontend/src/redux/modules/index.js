@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
-import base from './base';
+// import { combineReducers } from 'redux';
+// import base from './base';
 
-export default combineReducers({
-    base
-});
+// export default combineReducers({
+//     base
+// });
