@@ -1,10 +1,10 @@
 import React from "react";
-import MainContainer from "../components/Home/MainContainer";
+import HomeContainer from "../components/Home/HomeContainer";
 
 const Home = () => {
   return (
     <div>
-      <MainContainer />
+      <HomeContainer />
     </div>
   );
 };
