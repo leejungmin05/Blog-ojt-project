@@ -20,26 +20,26 @@ const TagListTitle = styled.div`
 `;
 
 const TagList = styled.div`
-font-size: 0.875rem;
-line-height: 1.5;
-color: rgb(32, 201, 151);
-font-weight: normal;
-margin-top: 1rem;
-span{
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgb(32, 201, 151);
+  font-weight: normal;
+  margin-top: 1rem;
+  span {
     margin-left: 0.5rem;
     color: rgb(134, 142, 150);
     font-weight: normal;
-}
+  }
 `;
 
 const PostTagList = () => {
   return (
     <TagListWrapper>
       <TagListTitle>태그 목록</TagListTitle>
-      <TagList>전체보기
-          <span>(1)</span>
-        
-      </TagList>  
+      <TagList>
+        전체보기
+        <span>(1)</span>
+      </TagList>
     </TagListWrapper>
   );
 };

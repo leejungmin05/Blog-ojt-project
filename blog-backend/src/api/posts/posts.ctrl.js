@@ -38,12 +38,11 @@ export const write = async (ctx) => {
     ctx.body = post;
   } catch (e) {
     ctx.throw(500, e);
-    s;
   }
 };
 
 export const list = async (ctx) => {
-  const page = parseInt(ctx.query.page || "1", 10);
+  const page = parseInt(ctx.query.page || "1", 15);
 
   if (page < 1) {
     ctx.status = 400;

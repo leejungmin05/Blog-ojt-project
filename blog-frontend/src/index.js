@@ -10,7 +10,6 @@ import App from './App';
 // const store = configureStore();
 
 ReactDOM.render(
-  // <Root store={store} />,
   <BrowserRouter>
     <App/>
   </BrowserRouter>,
