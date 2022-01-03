@@ -1,22 +1,12 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import * as baseActions from '../redux/modules/base';
+import EditorContainer from '../components/Editor/EditorContainer';
 
 const CreatePost = () => {
     return (
         <div>
-            createpost
+            <EditorContainer />
         </div>
     );
 };
 
 export default CreatePost;
-// export default connect(
-//     (state) => ({
-        
-//     }),
-//     (dispatch) => ({
-//         BaseActions: bindActionCreators(baseActions, dispatch) 
-//     })
-//   ) (CreatePost);
