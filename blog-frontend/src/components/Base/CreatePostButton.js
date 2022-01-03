@@ -25,7 +25,7 @@ color: black;
 
 const CreatePostButton = () => {
     return(
-    <StyledButton to="/create" >
+    <StyledButton to="/create">
         새 글 작성
     </StyledButton>
     )

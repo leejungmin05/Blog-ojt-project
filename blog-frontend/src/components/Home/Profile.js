@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 
 const ProfileWrapper = styled.div`
 display: flex;
@@ -43,18 +43,21 @@ overflow: hidden;
 
 const Profile = () => {
   return (
-      <ProfileWrapper>
-        <ProfileImg >
-          <img width ="100%" height="100%" src="https://media.vlpt.us/images/leejungmin05/profile/e9975979-884c-4f89-9f8a-042f4047aa6e/social.png?w=240" alt="profile"/>
-        </ProfileImg>
-        <ProfileTextWrapper >
-        <ProfileName> 
-          이정민
-        </ProfileName>
-        <ProfileText>
-          웰컴 ^__^
-        </ProfileText>
-        </ProfileTextWrapper>
+    <ProfileWrapper>
+      <Link to="/" >
+      <ProfileImg>
+        <img
+          width="100%"
+          height="100%"
+          src="https://media.vlpt.us/images/leejungmin05/profile/e9975979-884c-4f89-9f8a-042f4047aa6e/social.png?w=240"
+          alt="profile"
+        />
+      </ProfileImg>
+      </Link>
+      <ProfileTextWrapper>
+        <ProfileName>이정민</ProfileName>
+        <ProfileText>웰컴 ^__^</ProfileText>
+      </ProfileTextWrapper>
       
         
       </ProfileWrapper>

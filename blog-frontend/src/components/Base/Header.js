@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500&display=swap');
 </style>
@@ -35,11 +37,14 @@ const Spacer = styled.div`
 `;
 
 const Header = ({ children }) => {
+  // if(window.location.pathname === '/create') return null; 
   return (
     <Positioner>
       <WhiteBackground>
         <HeaderContents>
+          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
           <Logo>leejungmin05.log</Logo>
+          </Link>
           <Spacer />
           {children}
         </HeaderContents>
