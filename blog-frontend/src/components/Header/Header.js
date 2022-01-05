@@ -2,15 +2,17 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500&display=swap');
-</style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500&display=swap');
+</style>;
 
 const Positioner = styled.div`
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: sticky;
   top: 0px;
   width: 100%;
+  z-index: 1;
 `;
 
 const WhiteBackground = styled.div`
@@ -29,21 +31,21 @@ const HeaderContents = styled.div`
 
 const Logo = styled.div`
   font-size: 1.4rem;
-  font-family: 'Fira Mono', monospace;
-  `;
+  font-family: "Fira Mono", monospace;
+`;
 
 const Spacer = styled.div`
   flex-grow: 1;
 `;
 
 const Header = ({ children }) => {
-  // if(window.location.pathname === '/create') return null; 
+  // if(window.location.pathname === '/create') return null;
   return (
     <Positioner>
       <WhiteBackground>
         <HeaderContents>
           <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-          <Logo>leejungmin05.log</Logo>
+            <Logo>leejungmin05.log</Logo>
           </Link>
           <Spacer />
           {children}

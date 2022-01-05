@@ -2,12 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const TagListWrapper = styled.div`
-  margin-bottom: 1rem;
-  margin-top: 11.8rem;
-  position: relative;
-  left: -13rem;
-  bottom: 17.5rem;
+  position: absolute;
   width: 11.5rem;
+  left: -13.5rem;
+  top: 10.5%;
 `;
 
 const TagListTitle = styled.div`

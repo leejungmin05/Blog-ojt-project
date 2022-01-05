@@ -6,8 +6,8 @@ import styled from "styled-components";
 const EditorBlock = styled.div`
   padding-top: 5rem;
   padding-bottom: 5rem;
-  margin-left : 5rem;
-  margin-right: 5rem;
+  margin-left: 15rem;
+  margin-right: 15rem;
 `;
 
 const TitleInput = styled.input`
@@ -48,15 +48,16 @@ const Editor = () => {
         ],
       },
     });
-  },[]);
+  }, []);
 
-  return ( 
-  <EditorBlock>
+  return (
+    <EditorBlock>
       <TitleInput placeholder="제목을 입력하세요" />
       <QuillWrapper>
-          <div ref={quillElement} />
+        <div ref={quillElement} />
       </QuillWrapper>
-      </EditorBlock>);
+    </EditorBlock>
+  );
 };
 
 export default Editor;

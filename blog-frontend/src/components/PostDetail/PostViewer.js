@@ -29,7 +29,7 @@ const PostSubInfo = styled.div`
   font-size: 1rem;
   padding-top: 8px;
 
-  span+ span: before {
+  span+span: before {
     color: gray;
     padding-left: 0.7rem;
     padding-right: 0.7rem;
@@ -38,7 +38,7 @@ const PostSubInfo = styled.div`
 `;
 
 const PostButton = styled.div`
-cursor: pointer;
+  cursor: pointer;
 `;
 
 const Spacer = styled.div`
@@ -71,7 +71,9 @@ const PostViewer = () => {
           </PostButton>
         </PostInfo>
       </PostTitle>
-      <PostContent  dangerouslySetInnerHTML = {{ __html: '<p> HTML </p> <I> 이탤릭체 </I>'}} />
+      <PostContent
+        dangerouslySetInnerHTML={{ __html: "<p> HTML </p> <I> 이탤릭체 </I>" }}
+      />
     </PostWrapper>
   );
 };

@@ -17,10 +17,10 @@ const PostWrapper = styled.div`
 const PostContainer = () => {
   return (
     <PostWrapper>
-    <PostViewer />
-    <Profile />
-    <HorizontalLine />
-    <Comment />
+      <PostViewer />
+      <Profile />
+      <HorizontalLine />
+      <Comment />
     </PostWrapper>
   );
 };
