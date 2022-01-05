@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.24.0",
     "immutable": "^4.0.0",
     "koa": "^2.13.4",
     "open-color": "^1.9.1",
@@ -47,5 +48,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  }, "proxy": "http://localhost:4000/api/"
 }

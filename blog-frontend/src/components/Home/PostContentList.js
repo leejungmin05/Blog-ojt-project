@@ -11,12 +11,14 @@ const ContentWrapper = styled.div`
 
 const PostTitle = styled.div`
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   cursor: pointer;
 `;
 
 const PostContent = styled.div`
   color: gray;
+  -webkit-line-clamp: 6;
+  margin-top: 10px;
 `;
 
 const PostDate = styled.span`
@@ -25,7 +27,8 @@ const PostDate = styled.span`
   display: flex;
   flex-direction: row;
   text-decoration: none;
-  span+ span: before {
+  margin-top: 20px;
+  span+span: before {
     color: gray;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -33,19 +36,17 @@ const PostDate = styled.span`
   }
 `;
 
-const PostContentList = () => {
+const PostContentList = ({ post }) => {
   return (
     <>
       <HorizontalLine />
       <ContentWrapper>
         <Link to="/detail" style={{ textDecoration: "none", color: "black" }}>
-          <PostTitle>test</PostTitle>
+          <PostTitle>{post.title}</PostTitle>
         </Link>
-        <PostContent>
-          <p>welcome</p>
-        </PostContent>
+        <PostContent>{post.body}</PostContent>
         <PostDate>
-          <span>7일 전</span>
+          <span>{new Date(post.publishDate).toDateString()}</span>
           <span> 0개의 댓글</span>
         </PostDate>
       </ContentWrapper>
