@@ -78,8 +78,8 @@ const TagBox = () => {
 
   const insertTag = useCallback(
     (tag) => {
-      if (!tag) return; // 공백이라면 추가하지 않음
-      if (localTags.includes(tag)) return; // 이미 존재한다면 추가하지 않음
+      if (!tag) return; 
+      if (localTags.includes(tag)) return;
       setLocalTags([...localTags, tag]);
     },
     [localTags]
@@ -99,8 +99,8 @@ const TagBox = () => {
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
-      insertTag(input.trim()); // 앞뒤 공백을 없앤 후 등록
-      setInput(""); // input 초기화
+      insertTag(input.trim()); 
+      setInput(""); 
     },
     [input, insertTag]
   );

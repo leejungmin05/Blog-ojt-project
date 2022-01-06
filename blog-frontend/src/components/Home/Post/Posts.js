@@ -4,8 +4,8 @@ import PostContentList from "../PostContentList";
 const Posts = ({ posts }) => {
   return (
     <div>
-      {posts.map((post) => (
-        <PostContentList post={post} />
+      {posts.map((post, index) => (
+        <PostContentList post={post} key={index}/>
       ))}
     </div>
   );

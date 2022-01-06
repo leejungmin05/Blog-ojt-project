@@ -1,9 +1,11 @@
-import React from "react";
+import React ,{useEffect, useState} from "react";
+import { useLocation } from "react-router-dom";
 import Profile from "../Home/Profile";
 import PostViewer from "./PostViewer";
-import styled from "styled-components";
 import HorizontalLine from "../Home/HorizontalLine";
 import Comment from "./Comment";
+import styled from "styled-components";
+import axios from 'axios';
 
 const PostWrapper = styled.div`
   display: flex;
@@ -15,9 +17,21 @@ const PostWrapper = styled.div`
 `;
 
 const PostContainer = () => {
+  const location = useLocation()
+  const path = location.pathname.split("/")[2];
+  const [post, setPost] = useState({})
+
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get("/posts/" + path);
+      setPost(res.data)
+    };
+    getPost()
+  }, [path]);
+
   return (
     <PostWrapper>
-      <PostViewer />
+      <PostViewer post={post} />
       <Profile />
       <HorizontalLine />
       <Comment />

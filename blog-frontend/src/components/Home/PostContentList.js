@@ -41,7 +41,7 @@ const PostContentList = ({ post }) => {
     <>
       <HorizontalLine />
       <ContentWrapper>
-        <Link to="/detail" style={{ textDecoration: "none", color: "black" }}>
+        <Link to={`/post/${post._id}`} style={{ textDecoration: "none", color: "black" }}>
           <PostTitle>{post.title}</PostTitle>
         </Link>
         <PostContent>{post.body}</PostContent>
@@ -50,7 +50,7 @@ const PostContentList = ({ post }) => {
           <span> 0개의 댓글</span>
         </PostDate>
       </ContentWrapper>
-    </>
+      </>
   );
 };
 

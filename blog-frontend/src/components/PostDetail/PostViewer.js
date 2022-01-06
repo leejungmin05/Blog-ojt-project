@@ -46,23 +46,23 @@ const Spacer = styled.div`
 `;
 
 const PostContent = styled.div`
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: rgb(34, 36, 38);
   letter-spacing: -0.01em;
-  margin: 3rem 0px 15rem 0px;
+  margin: 5rem 0px 15rem 0px;
 `;
 
-const PostViewer = () => {
+const PostViewer = ({post}) => {
   return (
     <PostWrapper>
       <PostTitle>
-        <h1> ㅅㄷㄴㅅ </h1>
+        <h1> {post.title} </h1>
         <PostInfo>
           <PostSubInfo>
             <span>
               <b>leejungmin05</b>
             </span>
-            <span>7분 전</span>
+            <span>{new Date(post.publishDate).toDateString()}</span>
           </PostSubInfo>
           <Spacer />
           <PostButton>
@@ -71,9 +71,9 @@ const PostViewer = () => {
           </PostButton>
         </PostInfo>
       </PostTitle>
-      <PostContent
-        dangerouslySetInnerHTML={{ __html: "<p> HTML </p> <I> 이탤릭체 </I>" }}
-      />
+      <PostContent>
+        {post.body}
+      </PostContent>
     </PostWrapper>
   );
 };
