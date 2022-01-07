@@ -72,13 +72,13 @@ const TagList = React.memo(({ tags, onRemove }) => (
   </TagListBlock>
 ));
 
-const TagBox = () => {
+const TagBox = (props) => {
   const [input, setInput] = useState("");
   const [localTags, setLocalTags] = useState([]);
 
   const insertTag = useCallback(
     (tag) => {
-      if (!tag) return; 
+      if (!tag) return;
       if (localTags.includes(tag)) return;
       setLocalTags([...localTags, tag]);
     },
@@ -99,11 +99,13 @@ const TagBox = () => {
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
-      insertTag(input.trim()); 
-      setInput(""); 
+      insertTag(input.trim());
+      setInput("");
     },
     [input, insertTag]
   );
+  
+  props.getTags(localTags);
 
   return (
     <TagBoxBolck>

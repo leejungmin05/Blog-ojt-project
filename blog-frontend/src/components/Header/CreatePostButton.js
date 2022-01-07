@@ -8,7 +8,6 @@ const StyledButton = styled(Link)`
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 0.4rem;
-  margin-top: 1rem;
   cursor: pointer;
   text-decoration: none;
   transition: 0.2s all;
