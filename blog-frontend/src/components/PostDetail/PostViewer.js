@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
+import axios from "axios";
 
 const PostWrapper = styled.div`
   display: flex;
@@ -52,7 +53,14 @@ const PostContent = styled.div`
   margin: 5rem 0px 15rem 0px;
 `;
 
-const PostViewer = ({post}) => {
+const PostViewer = ({ post, path }) => {
+  const handleDelete = async () => {
+    try {
+      await axios.delete("/posts/" + path);
+      window.location.replace("/");
+    } catch (err) {}
+  };
+
   return (
     <PostWrapper>
       <PostTitle>
@@ -67,13 +75,13 @@ const PostViewer = ({post}) => {
           <Spacer />
           <PostButton>
             <Button variant="text">수정</Button>
-            <Button variant="text">삭제</Button>
+            <Button variant="text" onClick={handleDelete}>
+              삭제
+            </Button>
           </PostButton>
         </PostInfo>
       </PostTitle>
-      <PostContent>
-        {post.body}
-      </PostContent>
+      <PostContent>{post.body}</PostContent>
     </PostWrapper>
   );
 };

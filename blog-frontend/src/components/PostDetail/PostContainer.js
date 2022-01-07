@@ -31,7 +31,7 @@ const PostContainer = () => {
 
   return (
     <PostWrapper>
-      <PostViewer post={post} />
+      <PostViewer post={post} path={path} />
       <Profile />
       <HorizontalLine />
       <Comment />
