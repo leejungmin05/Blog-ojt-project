@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 <style>
   @import
@@ -39,7 +39,8 @@ const Spacer = styled.div`
 `;
 
 const Header = ({ children }) => {
-  // if(window.location.pathname === '/create') return null;
+  const location = useLocation();
+  if(location.pathname === '/create') return null;
   return (
     <Positioner>
       <WhiteBackground>
