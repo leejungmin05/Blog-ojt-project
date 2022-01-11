@@ -54,6 +54,7 @@ const PostContent = styled.div`
   color: rgb(34, 36, 38);
   letter-spacing: -0.01em;
   margin: 5rem 0px 15rem 0px;
+  white-space: pre-wrap;
 `;
 
 const PostViewer = ({ post, path }) => {
