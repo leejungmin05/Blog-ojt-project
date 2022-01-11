@@ -57,6 +57,15 @@ const PostContent = styled.div`
 `;
 
 const PostViewer = ({ post, path }) => {
+const Tags = styled.div`
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  font-weight: 100;
+  tag {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+`;
   Modal.setAppElement("#root");
   const handleDelete = async () => {
     try {
@@ -104,6 +113,9 @@ const PostViewer = ({ post, path }) => {
         </PostInfo>
       </PostTitle>
       <PostContent>{post.body}</PostContent>
+      <Tags> {post.tags && post.tags.map(tag=> (
+          <tag> #{tag} </tag>
+        ))} </Tags>
     </PostWrapper>
   );
 };
