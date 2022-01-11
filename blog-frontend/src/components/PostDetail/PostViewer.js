@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Modal from "react-modal";
+import "./style.css";
 
 const PostWrapper = styled.div`
   display: flex;
@@ -54,6 +57,7 @@ const PostContent = styled.div`
 `;
 
 const PostViewer = ({ post, path }) => {
+  Modal.setAppElement("#root");
   const handleDelete = async () => {
     try {
       await axios.delete("/posts/" + path);
@@ -61,6 +65,9 @@ const PostViewer = ({ post, path }) => {
     } catch (err) {}
   };
 
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <PostWrapper>
       <PostTitle>
@@ -74,10 +81,25 @@ const PostViewer = ({ post, path }) => {
           </PostSubInfo>
           <Spacer />
           <PostButton>
-            <Button variant="text">수정</Button>
-            <Button variant="text" onClick={handleDelete}>
+            <Button
+              variant="text"
+              onClick={() => {
+                navigate(`/create/${post._id}`);
+              }}>수정
+            </Button>
+            <Button variant="text" onClick={toggleModal}>
               삭제
             </Button>
+
+            <Modal
+              isOpen={isOpen}
+              onRequestClose={toggleModal}
+              className="modal"
+              overlayClassName="myoverlay"
+              closeTimeoutMS={500}>
+             <div>확인 버튼을 누르면 삭제됩니다.</div>  
+             <button className="button" onClick={toggleModal , handleDelete } >확인</button>
+            </Modal>
           </PostButton>
         </PostInfo>
       </PostTitle>
