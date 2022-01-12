@@ -30,7 +30,7 @@ const HomeContainer = () => {
     <HomeWrapper>
       <Profile />
       <Posts posts={posts} />
-      <PostTagList />
+      <PostTagList posts={posts} />
     </HomeWrapper>
   );
 };

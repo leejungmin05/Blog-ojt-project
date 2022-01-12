@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import HorizontalLine from "./HorizontalLine";
 import { Link } from "react-router-dom";
+import LinesEllipsis from 'react-lines-ellipsis';
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -17,8 +18,8 @@ const PostTitle = styled.div`
 
 const PostContent = styled.div`
   color: gray;
-  -webkit-line-clamp: 6;
   margin-top: 10px;
+  line-height: 2rem;
 `;
 
 const PostDate = styled.span`
@@ -44,7 +45,7 @@ const PostContentList = ({ post }) => {
         <Link to={`/post/${post._id}`} style={{ textDecoration: "none", color: "black" }}>
           <PostTitle>{post.title}</PostTitle>
         </Link>
-        <PostContent>{post.body}</PostContent>
+        <PostContent><LinesEllipsis text={post.body} ellipsis="..." maxLine={3} basedOn="letters"/></PostContent>
         <PostDate>
           <span>{new Date(post.publishDate).toDateString()}</span>
           <span> 0개의 댓글</span>
