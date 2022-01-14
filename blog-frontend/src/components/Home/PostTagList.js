@@ -1,4 +1,4 @@
-import React , { useState, useEffect } from "react";
+import React  from "react";
 import styled from "styled-components";
 
 const TagListWrapper = styled.div`
@@ -26,17 +26,29 @@ const TagList = styled.div`
   font-weight: normal;
   color: gray;
   span {
-    margin-left: 0.5rem;
-    color: rgb(134, 142, 150);
-    font-weight: normal;
+    padding-left: 0.5rem;
   }
   tag {
-    margin-left: 0.5rem;
     font-weight: normal;
+    padding-top: 0.1rem;
   }
 `;
 
 const PostTagList = ({ posts }) => {
+  const tags = [];
+  posts.map((post) => 
+    post.tags.map((tag)=>
+      tags.push(tag)
+    ))
+  
+  const tagsArray = {};
+  tags.forEach((i) => {
+    tagsArray[i] = (tagsArray[i] || 0) +1;
+    return tagsArray;
+  },{});
+
+  const keys = Object.keys(tagsArray);
+
   return (
     <TagListWrapper>
       <TagListTitle>태그 목록</TagListTitle>
@@ -44,13 +56,18 @@ const PostTagList = ({ posts }) => {
         전체보기
       </TagList>
       <TagList>
-        {posts && posts.map((post) => 
-        post.tags.map((tag) => 
-          <tag> {tag} </tag>
-          ))}
+      {keys && 
+      keys.map((tag) =>
+      <tag> {tag} <span>  ({tagsArray[tag]})</span> </tag>
+      )}
       </TagList>
     </TagListWrapper> 
   );
 };
 
 export default PostTagList;
+
+/* {posts && posts.map((post) => 
+        post.tags.map((tag) => 
+          <tag> {tag} </tag>
+          ))} */
