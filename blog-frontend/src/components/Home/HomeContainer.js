@@ -12,6 +12,7 @@ const HomeWrapper = styled.div`
   width: 768px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 150px;
   position: relative;
 `;
 

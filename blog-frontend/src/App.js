@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import PostDetail from "./pages/PostDetail";
@@ -10,7 +10,8 @@ function App() {
         <HeaderContainer />
       <Routes>
         <Route path="/" element={<Home />} exact={true} />
-        <Route path="/create" element={<CreatePost />} exact={true} />
+        <Route path="/create" element={<CreatePost />} exact={true}/>
+        <Route path="/create/:id" element={<CreatePost />} />
         <Route path="/post/:id" element={<PostDetail />} exact={true} />
       </Routes>
     </div>

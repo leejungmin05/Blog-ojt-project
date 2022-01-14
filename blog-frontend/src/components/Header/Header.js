@@ -40,7 +40,7 @@ const Spacer = styled.div`
 
 const Header = ({ children }) => {
   const location = useLocation();
-  if(location.pathname === '/create') return null;
+  if(location.pathname.includes('/create')) return null;
   return (
     <Positioner>
       <WhiteBackground>
