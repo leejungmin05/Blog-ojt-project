@@ -57,7 +57,6 @@ const PostContent = styled.div`
   white-space: pre-wrap;
 `;
 
-const PostViewer = ({ post, path }) => {
 const Tags = styled.div`
   font-size: 1rem;
   margin-bottom: 3rem;
@@ -67,10 +66,25 @@ const Tags = styled.div`
     margin-right: 0.5rem;
   }
 `;
+
+const PostViewer = (props) => {
+  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const [post, setPost] = useState({});
+
   Modal.setAppElement("#root");
+
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get("/posts/" + props.path);
+      setPost(res.data);
+    };
+    getPost();
+  }, [props.path,post]);
+
   const handleDelete = async () => {
     try {
-      await axios.delete("/posts/" + path);
+      await axios.delete("/posts/" + props.path);
       window.location.replace("/");
     } catch (err) {}
   };
@@ -78,6 +92,7 @@ const Tags = styled.div`
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <PostWrapper>
       <PostTitle>
@@ -100,15 +115,15 @@ const Tags = styled.div`
             <Button variant="text" onClick={toggleModal}>
               삭제
             </Button>
-
             <Modal
               isOpen={isOpen}
               onRequestClose={toggleModal}
               className="modal"
-              overlayClassName="myoverlay"
+              overlayClassName="overlay"
               closeTimeoutMS={500}>
+                <div className="title">포스트 삭제</div>
              <div>확인 버튼을 누르면 삭제됩니다.</div>  
-             <button className="button" onClick={toggleModal , handleDelete } >확인</button>
+             <button className="button" onClick={toggleModal && handleDelete } >확인</button>
             </Modal>
           </PostButton>
         </PostInfo>
