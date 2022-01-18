@@ -30,7 +30,7 @@ const TagListWrapper = styled.div`
   width: 11.5rem;
   left: -13.5rem;
   top: 10rem;
-  
+
   @media screen and (max-width: 1220px) {
     display: none;
   }
@@ -50,7 +50,7 @@ const TagList = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.3;
   font-weight: normal;
   color: gray;
   span {
