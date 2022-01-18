@@ -121,10 +121,14 @@ const PostViewer = (props) => {
               className="modal"
               overlayClassName="overlay"
               closeTimeoutMS={500}>
-                <div className="title">포스트 삭제</div>
-             <div>확인 버튼을 누르면 삭제됩니다.</div>  
+             <div className="title">포스트 삭제</div> 
+             <div className="font">확인 버튼을 누르면 삭제됩니다.</div>  
+             <div className="button-area">
              <button className="button" onClick={toggleModal && handleDelete } >확인</button>
+             </div>
+              
             </Modal>
+            
           </PostButton>
         </PostInfo>
       </PostTitle>

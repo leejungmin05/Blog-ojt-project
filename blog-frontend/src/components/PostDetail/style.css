@@ -3,36 +3,48 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid #ccc;
-    background: #fff;
-    overflow: auto;
-    border-radius: 9px;
-    outline: none;
-    padding: 25px;
-    font-size: large;
+    width: 25rem;
+    border-radius: 4px;
+    background: white;
+    padding: 2rem 1.5rem;
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
+    animation: 0.4s ease-in-out 0s 1 normal forwards running hwrkPK;
+  }
+
+  .button-area {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
   }
   
   .button {
     margin-top: 40px;
-    background-color: black;
-    color:white;
+    background-color: #12B886;
+    color:white; 
+    font-size: 16px;
     border-radius: 10%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-top: 6px;
     padding-bottom: 6px;   
     border-style: none;
   }
-  
+
+  .font {
+    font-weight: 400;
+    color: gray;
+    font-size: 1rem;
+  }
+
   .overlay {
     position: fixed;
-    text-align: center;
+    text-align: flex-start;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(221, 220, 220, 0.75);
   }
   
   .ReactModal__Overlay {
