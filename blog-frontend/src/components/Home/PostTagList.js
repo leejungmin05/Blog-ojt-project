@@ -1,11 +1,39 @@
-import React  from "react";
+import React from "react";
 import styled from "styled-components";
+
+const UpperTagListWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  span {
+    color: gray;
+    padding-top: 3px;
+  }
+  tag {
+    font-weight: 400;
+    font-size: small;
+    margin-left: 0.7rem;
+    border-radius: 20px;
+    background-color: #20c997;
+    padding-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+  }
+  @media screen and (min-width: 1220px) {
+    display: none;
+  }
+`;
 
 const TagListWrapper = styled.div`
   position: absolute;
   width: 11.5rem;
   left: -13.5rem;
   top: 10rem;
+  
+  @media screen and (max-width: 1220px) {
+    display: none;
+  }
 `;
 
 const TagListTitle = styled.div`
@@ -19,8 +47,8 @@ const TagListTitle = styled.div`
 `;
 
 const TagList = styled.div`
- display: flex;
- flex-direction: column;
+  display: flex;
+  flex-direction: column;
   font-size: 0.875rem;
   line-height: 1.5;
   font-weight: normal;
@@ -36,38 +64,37 @@ const TagList = styled.div`
 
 const PostTagList = ({ posts }) => {
   const tags = [];
-  posts.map((post) => 
-    post.tags.map((tag)=>
-      tags.push(tag)
-    ))
-  
+  posts.map((post) => post.tags.map((tag) => tags.push(tag)));
+
   const tagsArray = {};
   tags.forEach((i) => {
-    tagsArray[i] = (tagsArray[i] || 0) +1;
+    tagsArray[i] = (tagsArray[i] || 0) + 1;
     return tagsArray;
-  },{});
+  }, {});
 
   const keys = Object.keys(tagsArray);
 
   return (
-    <TagListWrapper>
-      <TagListTitle>태그 목록</TagListTitle>
-      <TagList style={{ color: "#20c997" }}>
-        전체보기
-      </TagList>
-      <TagList>
-      {keys && 
-      keys.map((tag) =>
-      <tag> {tag} <span>  ({tagsArray[tag]})</span> </tag>
-      )}
-      </TagList>
-    </TagListWrapper> 
+    <>
+      <UpperTagListWrapper>
+        <span> 태그 목록 > </span>
+        {keys && keys.map((tag) => <tag> {tag} </tag>)}
+      </UpperTagListWrapper>
+      <TagListWrapper>
+        <TagListTitle>태그 목록</TagListTitle>
+        <TagList style={{ color: "#20c997" }}>전체보기</TagList>
+        <TagList>
+          {keys &&
+            keys.map((tag) => (
+              <tag>
+                {" "}
+                {tag} <span> ({tagsArray[tag]})</span>{" "}
+              </tag>
+            ))}
+        </TagList>
+      </TagListWrapper>
+    </>
   );
 };
 
 export default PostTagList;
-
-/* {posts && posts.map((post) => 
-        post.tags.map((tag) => 
-          <tag> {tag} </tag>
-          ))} */

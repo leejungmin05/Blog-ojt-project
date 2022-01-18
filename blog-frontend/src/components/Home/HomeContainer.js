@@ -30,8 +30,8 @@ const HomeContainer = () => {
   return (
     <HomeWrapper>
       <Profile />
-      <Posts posts={posts} />
       <PostTagList posts={posts} />
+      <Posts posts={posts} />
     </HomeWrapper>
   );
 };

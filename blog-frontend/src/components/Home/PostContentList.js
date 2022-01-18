@@ -23,18 +23,18 @@ const PostContent = styled.div`
 `;
 
 const PostDate = styled.span`
+color: gray;
+font-size: 0.8rem;
+display: flex;
+flex-direction: row;
+text-decoration: none;
+margin-top: 20px;
+span+span: before {
   color: gray;
-  font-size: 0.8rem;
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  margin-top: 20px;
-  span+span: before {
-    color: gray;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    content: "\\B7";
-  }
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  content: "\\B7";
+}
 `;
 
 const PostContentList = ({ post }) => {
@@ -56,3 +56,24 @@ const PostContentList = ({ post }) => {
 };
 
 export default PostContentList;
+
+
+
+
+
+
+// const PostTag = styled.div`
+//   margin-top: 1rem;
+//   background: rgb(241, 243, 245);
+//   padding-left: 1rem;
+//   padding-right: 1rem;
+//   height: 1.5rem;
+//   border-radius: 1rem;
+//   display: inline-flex;
+//   align-items: center;
+//   margin-right: 0.875rem;
+//   color: rgb(12, 166, 120);
+//   text-decoration: none;
+//   font-weight: 500;
+//   font-size: 0.9rem;
+// `;
