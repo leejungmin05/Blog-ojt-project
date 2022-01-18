@@ -4,6 +4,7 @@ import styled from "styled-components";
 const UpperTagListWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin-top: 2rem;
   span {
     color: gray;
@@ -19,6 +20,7 @@ const UpperTagListWrapper = styled.div`
     padding-left: 10px;
     padding-right: 10px;
     color: white;
+    margin-bottom: 2px;
   }
   @media screen and (min-width: 1220px) {
     display: none;
@@ -82,7 +84,7 @@ const PostTagList = ({ posts }) => {
       </UpperTagListWrapper>
       <TagListWrapper>
         <TagListTitle>태그 목록</TagListTitle>
-        <TagList style={{ color: "#20c997" }}>전체보기</TagList>
+        <TagList style={{ color: "#20c997", fontWeight: 600 }}>전체보기</TagList>
         <TagList>
           {keys &&
             keys.map((tag) => (
