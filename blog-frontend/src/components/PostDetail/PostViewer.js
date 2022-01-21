@@ -126,9 +126,7 @@ const PostViewer = (props) => {
              <div className="button-area">
              <button className="button" onClick={toggleModal && handleDelete } >확인</button>
              </div>
-              
             </Modal>
-            
           </PostButton>
         </PostInfo>
       </PostTitle>

@@ -1,11 +1,9 @@
 import React from "react";
-import PostContainer from "../components/PostDetail/PostContainer";
+import PostContainer from "../components/postDetail/PostContainer";
 
 const PostDetail = () => {
   return (
-    <div>
       <PostContainer />
-    </div>
   );
 };
 

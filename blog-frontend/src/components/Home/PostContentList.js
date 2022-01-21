@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import HorizontalLine from "./HorizontalLine";
+import { Line } from "../common/HorizontalLine";
 import { Link } from "react-router-dom";
 import LinesEllipsis from 'react-lines-ellipsis';
 
@@ -40,7 +40,7 @@ span+span: before {
 const PostContentList = ({ post }) => {
   return (
     <>
-      <HorizontalLine />
+      <Line />
       <ContentWrapper>
         <Link to={`/post/${post._id}`} style={{ textDecoration: "none", color: "black" }}>
           <PostTitle>{post.title}</PostTitle>
@@ -56,24 +56,3 @@ const PostContentList = ({ post }) => {
 };
 
 export default PostContentList;
-
-
-
-
-
-
-// const PostTag = styled.div`
-//   margin-top: 1rem;
-//   background: rgb(241, 243, 245);
-//   padding-left: 1rem;
-//   padding-right: 1rem;
-//   height: 1.5rem;
-//   border-radius: 1rem;
-//   display: inline-flex;
-//   align-items: center;
-//   margin-right: 0.875rem;
-//   color: rgb(12, 166, 120);
-//   text-decoration: none;
-//   font-weight: 500;
-//   font-size: 0.9rem;
-// `;

@@ -42,7 +42,7 @@ export const write = async (ctx) => {
 };
 
 export const list = async (ctx) => {
-  const page = parseInt(ctx.query.page || "1", 15);
+  const page = parseInt(ctx.query.page || "1", 10);
 
   if (page < 1) {
     ctx.status = 400;

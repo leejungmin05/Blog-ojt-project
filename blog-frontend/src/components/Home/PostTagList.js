@@ -79,7 +79,7 @@ const PostTagList = ({ posts }) => {
   return (
     <>
       <UpperTagListWrapper>
-        <span> 태그 목록 > </span>
+        <span> 태그 목록 {'>'} </span>
         {keys && keys.map((tag) => <tag> {tag} </tag>)}
       </UpperTagListWrapper>
       <TagListWrapper>
@@ -90,7 +90,7 @@ const PostTagList = ({ posts }) => {
             keys.map((tag) => (
               <tag>
                 {" "}
-                {tag} <span> ({tagsArray[tag]})</span>{" "}
+                {tag} <span> ({tagsArray[tag]})</span>
               </tag>
             ))}
         </TagList>

@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import Profile from "../Home/Profile";
+import Profile from "../home/Profile";
 import PostViewer from "./PostViewer";
-import HorizontalLine from "../Home/HorizontalLine";
+import { Line } from "../common/HorizontalLine";
 import Comment from "./Comment";
 import styled from "styled-components";
 
@@ -23,7 +23,7 @@ const PostContainer = () => {
     <PostWrapper>
       <PostViewer path={path} />
       <Profile />
-      <HorizontalLine />
+      <Line/>
       <Comment />
     </PostWrapper>
   );

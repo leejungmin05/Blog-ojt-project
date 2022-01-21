@@ -1,11 +1,9 @@
 import React from 'react';
-import EditorContainer from '../components/Editor/EditorContainer';
+import EditorContainer from '../components/editor/EditorContainer';
 
 const CreatePost = () => {
     return (
-        <div>
-            <EditorContainer />
-        </div>
+        <EditorContainer />
     );
 };
 
